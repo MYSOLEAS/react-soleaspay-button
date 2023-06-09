@@ -18,10 +18,10 @@ You can install the package via composer:
 npm i react-sopay-button
 ```
 
-You can now include the payment button by importing the SopayButton component by adding the following code to the page where you want to put the button:
+You can now include the payment button by importing the useSopayButton hook and the SopayButton component by adding the following code to the page where you want to put the button:
 
 ```js
-import { SopayButton } from "react-sopay-button";
+import { useSopayButton, SopayButton } from "react-sopay-button";
 ```
 
 to finish you just have to send the following information :
@@ -38,13 +38,31 @@ to finish you just have to send the following information :
 - **loadInvoice**(true, false) : whether or not the system should generate an invoice for its customer;
 - **successUrl** : The url at which you want to receive a notification once the payment has been made perform;
 
-to do this put the button where you want using the component with the information. Here is an example of use :
+to do this, you need to use the useSopayButton hook which will take the information from it and return a promise. Here is an example of use:
 
 ```js
-<SopayButton
-  langue="fr" apiKey="btVHIanyagsaFAGYubsadkihFNJSH" mode="tiping"  btnTitle="Pay Now"
-  amount="100000" currency="XAF" orderId="MLS00000025F" description="sopay button payment"
-  businessName="Mysoleas" loadInvoice="true" successUrl="https://yourdomain.com/receivePayment" />
+const data = {
+  langue: "fr",
+  apiKey: "MkmV_WapE32Fn-wAxnQMMFzCCUsyvu2T6U1Tv-Jhdk4",
+  mode: "tiping",
+  btnTitle: "Test Pay Now",
+  amount: "1000",
+  currency: "XAF",
+  orderId: "MLS00000025F",
+  description: "Test sopay button payment v2",
+  businessName: "Shop Name",
+  loadInvoice: "true",
+  successUrl: "https://yourdomain.com/receivePayment",
+};
+useSopayButton(data);
+```
+Place the <SopayButton/> component where you want to display the button
+
+You can see the promise result with the following code
+
+```js
+useSopayButton(data)
+        .then((res) => console.log(res))
 ```
 
 ## Changelog

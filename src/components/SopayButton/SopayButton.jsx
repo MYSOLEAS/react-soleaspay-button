@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 
-export const SopayButton = ({
+export const SopayButton = () => {
+  return <div className="sopayButton"></div>;
+};
+
+export const useSopayButton = ({
   apiKey,
   langue,
   mode,
@@ -40,9 +44,13 @@ export const SopayButton = ({
 
       function initButton() {
         return SopayButton.${mode}(options)
-          .then((res) => console.log(res))
-          .catch((err) => console.log(err))
-          .finally(initButton);
+        .then((res) => {
+            localStorage.setItem('sopayresult', JSON.stringify(res));
+        })
+        .catch((err) => {
+            localStorage.setItem('sopayresult', JSON.stringify(err));
+        })
+        .finally(initButton);
       }
 
       initButton();
@@ -50,10 +58,13 @@ export const SopayButton = ({
       document.body.appendChild(script2);
     };
 
+
+
     return () => {
       document.body.removeChild(script2);
       document.body.removeChild(script1);
     };
+
   }, [
     apiKey,
     langue,
@@ -68,7 +79,18 @@ export const SopayButton = ({
     successUrl,
   ]);
 
-  return <div className="sopayButton"></div>;
+  return new Promise((resolve, reject) => {
+    let i = setInterval(() => {
+      const result = JSON.parse(localStorage.getItem('sopayresult'));
+      if (result !== null) {
+        localStorage.removeItem('sopayresult')
+        clearInterval(i)
+        resolve(result);
+      }
+    }, 1000);
+  });
+
 };
+
 
 
