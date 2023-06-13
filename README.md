@@ -1,4 +1,4 @@
-# react-sopay-button
+# @mysoleas/soleaspay-button-react
 
 [![npm version](https://badge.fury.io/js/react-sopay-button.svg)](https://badge.fury.io/js/react-sopay-button)
 
@@ -15,13 +15,13 @@ We invest a lot of resources in the creation of packages to facilitate the integ
 You can install the package via composer:
 
 ```bash
-npm i @mysoleas/soleaspay-button
+npm i @mysoleas/soleaspay-button-react
 ```
 
 You can now include the payment button by importing the useSopayButton hook and the SopayButton component by adding the following code to the page where you want to put the button:
 
 ```js
-import { useSopayButton, SopayButton } from "@mysoleas/react-sopay-button";
+import { useSopayButton, SopayButton } from "@mysoleas/soleaspay-button-react";
 ```
 
 to finish you just have to send the following information :
