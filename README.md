@@ -15,13 +15,13 @@ We invest a lot of resources in the creation of packages to facilitate the integ
 You can install the package via composer:
 
 ```bash
-npm i react-sopay-button
+npm i @mysoleas/react-sopay-button
 ```
 
 You can now include the payment button by importing the useSopayButton hook and the SopayButton component by adding the following code to the page where you want to put the button:
 
 ```js
-import { useSopayButton, SopayButton } from "react-sopay-button";
+import { useSopayButton, SopayButton } from "@mysoleas/react-sopay-button";
 ```
 
 to finish you just have to send the following information :

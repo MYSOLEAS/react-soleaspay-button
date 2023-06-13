@@ -1,5 +1,5 @@
 {
-  "name": "react-sopay-button",
+  "name": "@mysoleas/react-sopay-button",
   "version": "1.0.0",
   "description": "Package pour le paiement en ligne supporté par la platforme soleaspay",
   "main": "dist/index.js",
@@ -34,9 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MYSOLEAS/react-soleaspay-button"
+    "url": "git+https://github.com/MYSOLEAS/react-soleaspay-button.git"
   },
   "publishConfig": {
-    "@mysoleas:registry": "https://npm.pkg.github.com/MYSOLEAS"
-  }
+    "@mysoleas:registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/MYSOLEAS/react-soleaspay-button/issues"
+  },
+  "homepage": "https://github.com/MYSOLEAS/react-soleaspay-button#readme"
 }
