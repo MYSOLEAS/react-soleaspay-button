@@ -1,7 +1,7 @@
 {
-  "name": "@mysoleas/react-sopay-button",
+  "name": "@mysoleas/react-soleaspay-button",
   "version": "1.0.0",
-  "description": "Package pour le paiement en ligne supporté par la platforme soleaspay",
+  "description": "Package pour le paiement en ligne supporté par notre platforme soleaspay",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
